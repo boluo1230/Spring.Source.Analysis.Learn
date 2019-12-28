@@ -1,5 +1,6 @@
 package com.boluo1230.test;
 
+import com.boluo1230.config.AppConfig;
 import com.boluo1230.dao.UserDao;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -12,12 +13,12 @@ public class Test {
 	public static void main(String[] args) {
 
 		AnnotationConfigApplicationContext applicationContext =
-				new AnnotationConfigApplicationContext();
-		applicationContext.register(UserDao.class);
-		applicationContext.refresh();
+				new AnnotationConfigApplicationContext(AppConfig.class);
+//		applicationContext.register(UserDao.class);
+//		applicationContext.refresh();
 
-		UserDao userDao = applicationContext.getBean(UserDao.class);
-		userDao.query();
+//		UserDao userDao = applicationContext.getBean(UserDao.class);
+//		userDao.query();
 	}
 
 }
